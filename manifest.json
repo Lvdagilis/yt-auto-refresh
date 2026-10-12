@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Auto-Refresh (Brave Fix)",
+  "version": "1.0.0",
+  "description": "Detects when a YouTube video loads into a broken/blinking 00:00 state and automatically refreshes until it plays correctly.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "YouTube Auto-Refresh"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
